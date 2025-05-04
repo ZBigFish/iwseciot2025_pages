@@ -9,14 +9,27 @@
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-qb-installed="true">
 
 <head>
   <meta charset="UTF-8" />
   <title>第九届中日韩物联网关键技术研讨会</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 
 
+
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets\css\swiper-bundle.css" />
+  <script src="assets\js\swiper-bundle.min.js"></script>
+  <script src="assets\js\jquery.min.js"></script>
+  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+  <link href="assets\css\tailwind.min.css" rel="stylesheet">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <script>
     function resizeFont() {
       //获取屏幕宽度
@@ -37,13 +50,6 @@
       resizeFont();
     };
   </script>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets\css\swiper-bundle.css" />
-  <script src="assets\js\swiper-bundle.min.js"></script>
-  <script src="assets\js\jquery.min.js"></script>
-  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-    <link href="assets\css\tailwind.min.css" rel="stylesheet">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
@@ -51,7 +57,7 @@
     <!-- 顶部轮播图 -->
     <div id="headerPic">
       <div class="box" style="position: relative">
-        <div class="swiper mySwiper swiper-horizontal">
+        <div class="swiper mySwiper swiper-horizontal swiper-initialized swiper-pointer-events">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="assets\images\touding.jpg" width="100%" />
@@ -146,9 +152,11 @@
       }
 
 
+
+
       #jianjie {
         width: 100%;
-        height: 100%x;
+        height: 100%;
         background-image: url(assets/images/jianjie.jpg);
         background-size: cover;
       }
@@ -297,7 +305,7 @@
         <div class="rounded-sm" id="jianjie">
           <a href="jianjie.html"></a>
         </div>
-        
+
         <!-- <div class=" rounded-sm" id="baogao">
           <a href="baogao.html"></a>
         </div> -->
@@ -328,7 +336,7 @@
 
 
     <!-- 底部轮播图开始 -->
-    <div class="bottom11">
+    <!-- <div class="bottom11">
       <div style="width: 100%; height: 1.2rem; padding: 20px 0">
         <div class="swiper mySwiper2 swiper-horizontal">
 
@@ -355,7 +363,7 @@
         </script>
 
       </div>
-    </div>
+    </div> -->
 
 
   </div>
