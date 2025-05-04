@@ -1,0 +1,365 @@
+<!--
+ * @Author: hutong9 470048408@qq.com
+ * @Date: 2022-10-28 09:46:09
+ * @LastEditors: HuTong 470048408@qq.com
+ * @LastEditTime: 2025-04-24 21:16:17
+ * @FilePath: \CCF\index.html
+ * @Description: 
+ * Copyright (c) 2022 by hutong9 470048408@qq.com, All Rights Reserved. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>第九届中日韩物联网关键技术研讨会</title>
+
+
+
+  <script>
+    function resizeFont() {
+      //获取屏幕宽度
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+      //设计图参考宽度
+      let design = 750;
+      if (clientWidth > 750)
+        document.getElementsByTagName("html").item(0).style.fontSize =
+          "100px";
+      else
+        document.getElementsByTagName("html").item(0).style.fontSize =
+          (clientWidth / design) * 100 + "px";
+    }
+
+    resizeFont();
+    window.onresize = function () {
+      resizeFont();
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets\css\swiper-bundle.css" />
+  <script src="assets\js\swiper-bundle.min.js"></script>
+  <script src="assets\js\jquery.min.js"></script>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body>
+  <div class="editor-scpoed1">
+    <!-- 顶部轮播图 -->
+    <div id="headerPic">
+      <div class="box" style="position: relative">
+        <div class="swiper mySwiper swiper-horizontal">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets\images\touding.jpg" width="100%" />
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            speed: 2000,
+            autoplay: {
+              delay: 3000,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <!-- 倒计时开始 -->
+    <div class="down_data">
+      <div class="top_text">
+        <p class="top_text1"></p>
+        <span>距离大会开幕</span>
+        <p class="top_text2"></p>
+      </div>
+      <div class="timebox" id="timer" data-time="2025-05-6 14:00:00">
+        <div class="days">
+          <div class="block day" id="d">0</div>
+          <span class="txt">DAYS</span>
+        </div>
+        <div class="days">
+          <span class="block hour" id="h">0</span>
+          <span class="txt">HOURS</span>
+        </div>
+        <div class="days">
+          <span class="block minute" id="m">0</span>
+          <span class="txt">MINUTES</span>
+        </div>
+        <div class="days">
+          <span class="block second" id="s">0</span>
+          <span class="txt">SECONDS</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 倒计时
+      $(function () {
+        countDown($("#timer").data("time"), "#timer");
+      });
+      function countDown(time, id) {
+        var day_elem = $(id).find(".day");
+        var hour_elem = $(id).find(".hour");
+        var minute_elem = $(id).find(".minute");
+        var second_elem = $(id).find(".second");
+        var end_time = new Date(time.replace(/-/g, "\/")).getTime(), //月份是实际月份-1
+          sys_second = (end_time - new Date().getTime()) / 1000;
+        var timer = setInterval(function () {
+          if (sys_second > 1) {
+            sys_second -= 1;
+            var day = Math.floor(sys_second / 3600 / 24);
+            var hour = Math.floor((sys_second / 3600) % 24);
+            var minute = Math.floor((sys_second / 60) % 60);
+            var second = Math.floor(sys_second % 60);
+            day_elem && $(day_elem).text(day); //计算天
+            $(hour_elem).text(hour < 10 ? "0" + hour : hour); //计算小时
+            $(minute_elem).text(minute < 10 ? "0" + minute : minute); //计算分钟
+            $(second_elem).text(second < 10 ? "0" + second : second); //计算秒杀
+          } else {
+            clearInterval(timer);
+            // $(id).html("正在进行中！")
+          }
+        }, 1000);
+      }
+    </script>
+
+    <!-- 模块开始 -->
+    <style>
+      .product-subContainer {
+        position: relative;
+      }
+
+      .button-blue {
+        position: absolute;
+        bottom: 0.25rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+
+
+      #jianjie {
+        width: 100%;
+        height: 100%x;
+        background-image: url(assets/images/jianjie.jpg);
+        background-size: cover;
+      }
+
+
+      #jianjie a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+
+      #richeng {
+        width: 100%;
+        height: 100%x;
+        background-image: url(assets/images/richeng.png);
+        background-size: cover;
+      }
+
+
+      #richeng a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+
+      #jiabin {
+        width: 100%;
+        height: 100%x;
+        background-image: url(assets/images/jiabin.png);
+        background-size: cover;
+      }
+
+      #jiabin a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+      #jiudian {
+        width: 100%;
+        height: 100%x;
+        background-image: url(assets/images/jiudian.png);
+        background-size: cover;
+      }
+
+      #jiudian a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+      #jiudian_short {
+        width: 100%;
+        height: 100%x;
+        background-image: url(assets/images/jiudian_short.png);
+        background-size: cover;
+      }
+
+      #jiudian_short a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+      #zanzhu a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+      #zanzhu {
+        width: 100%;
+        height: 100%x;
+        background-image: url(https://cdn.meeting666.com/utool/isbplm2024/vl3wvdyy28%E4%BC%9A%E8%AE%AE%E8%B5%9E%E5%8A%A9.jpg);
+        background-size: cover;
+      }
+
+      #lianxi a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+
+
+      #lianxi {
+        width: 100%;
+        height: 100%;
+        background-image: url(assets/images/lianxi.png);
+        background-size: cover;
+      }
+
+      #lianxi a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+
+      #jiaotong {
+        width: 100%;
+        height: 100%;
+        background-image: url(assets/images/jiaotong.png);
+        background-size: cover;
+      }
+
+      #jiaotong a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+
+
+      #zhaopian {
+        width: 100%;
+        height: 100%x;
+        background-image: url(https://cdn.meeting666.com/utool/isbplm2024/p1gt5pquoazhaopian.png);
+        background-size: cover;
+      }
+
+      #zhaopian a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: hand;
+      }
+    </style>
+
+    <div class="py-1">
+
+
+      <!-- 第一行 -->
+
+      <div class="h-7 grid grid-rows-1 grid-flow-col gap-0.5 px-1">
+        <div class="rounded-sm" id="jianjie">
+          <a href="jianjie.html"></a>
+        </div>
+        
+        <!-- <div class=" rounded-sm" id="baogao">
+          <a href="baogao.html"></a>
+        </div> -->
+      </div>
+      <!-- 第2行 -->
+      <div class="h-8 grid grid-rows-1 grid-flow-col gap-0.5 px-1 py-0.5">
+        <div class="rounded-sm" id="jiabin">
+          <a href="jiabin.html"></a>
+        </div>
+        <div class="rounded-sm" id="richeng">
+          <a href="richeng.html"></a>
+        </div>
+      </div>
+
+      <div class="h-7 grid grid-rows-1 grid-flow-col gap-0.5 px-1">
+        <div class="rounded-sm" id="jiudian_short">
+          <a href="jiudian.html"></a>
+        </div>
+        <div class="rounded-sm" id="jiaotong">
+          <a href="jiaotong.html"></a>
+        </div>
+        <div class="rounded-sm" id="lianxi">
+          <a href="lianxi.html"></a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- 底部轮播图开始 -->
+    <!-- <div class="bottom11">
+      <div style="width: 100%; height: 1.2rem; padding: 20px 0">
+        <div class="swiper mySwiper2 swiper-horizontal">
+
+
+          <div>
+            <p style="text-align: center; font-size: 12px">
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXX 版权所有
+            </p>
+            <p style="text-align: center; font-size: 12px">
+              技术支持：XXXXXXXXXXXXXXXXXXXXXXXXX
+            </p>
+          </div>
+        </div>
+
+        <script>
+          var swiper = new Swiper(".mySwiper2", {
+            speed: 2000,
+            loop: true,
+            autoplay: {
+              delay: 2000,
+              disableOnInteraction: false,
+            },
+          });
+        </script>
+
+      </div>
+    </div> -->
+
+
+  </div>
+  </div>
+
+</body>
+
+</html>
